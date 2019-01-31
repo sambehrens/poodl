@@ -92,7 +92,12 @@ class Login extends Component {
             Don't have an account? <Link to="/register">Register</Link>
           </p>
         </div>
-        <Form fields={this.getFields()} onSubmit={this.onSubmit} noValidate />
+        <Form
+          fields={this.getFields()}
+          onSubmit={this.onSubmit}
+          noValidate
+          buttonLabel="Log in"
+        />
       </div>
     );
   }

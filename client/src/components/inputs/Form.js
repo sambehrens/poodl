@@ -6,7 +6,12 @@ import Button from "./Button";
 const propTypes = {
   onSubmit: PropTypes.func.isRequired,
   fields: PropTypes.array.isRequired,
-  noValidate: PropTypes.bool
+  noValidate: PropTypes.bool,
+  buttonLabel: PropTypes.string
+};
+
+const defaultProps = {
+  buttonLabel: "Submit"
 };
 
 class Form extends Component {
@@ -49,11 +54,12 @@ class Form extends Component {
     return (
       <form noValidate={this.props.noValidate} onSubmit={this.props.onSubmit}>
         {this.getFieldsMarkup()}
-        <Button type="submit" content="Submit" />
+        <Button type="submit" content={this.props.buttonLabel} />
       </form>
     );
   }
 }
 
 Form.propTypes = propTypes;
+Form.defaultProps = defaultProps;
 export default Form;
